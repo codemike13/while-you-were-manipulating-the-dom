@@ -31,26 +31,7 @@ function biggify(event) {
   const inputNum = parseInt(userInput.value) + 9000;
   userInput.value = "";
 
-  /*
-  TODO: Add 9000 to the user's number.
-  
-  A hint: if this isn't working, it _might_ be because of the JavaScript type of the data coming in.
-  
-  Use the pre-defined `printValue` function below to print out the result,
-  giving it the value you want to print.
-  
-  Essentially, you can use `printValue` the same way you would `console.log`,
-  only it will write to the DOM instead of to the console.
-  */
   printValue(inputNum);
-  /*
-  Stretch goal TODO:
-    Using the variable we saved above for the input box, clear its value.
-    
-    This is a very useful feature, as it's an annoying and unexpected user
-    experience to ask them to delete anything they've inputted previously before
-    inputting something else.
-  */
 }
 
 function nasafy(event) {
@@ -79,22 +60,15 @@ function crazify(event) {
   for (i = 0; i < inStr.length; i++) {
     if (i % 2 === 0) {
       crazy += inStr[i].toUpperCase();
+    } else if (inStr[i] === inStr[i].toUpperCase()) {
+      crazy += inStr[i].toLowerCase();
     } else {
       crazy += inStr[i];
     }
   }
+  userInput.value = "";
+
   printValue(crazy);
-  /*
-    Stretch goal TODOS:
-    * If you haven't already, make sure capitalized user inputs get crazified too. "BANANA" crazified should be "bAnAnA", not "BANANA"!
-
-    * Only count the characters that are in the alphabet when you're considering what to capitalize. Without this adjustment, "hey you" comes out as "hEy yOu", with the space "capitalized" (whatever that means!). Make it result in "hEy YoU" instead!
-  */
-
-  /*
-  Stretch goal TODO:
-  Using the variable we saved above for the input box, clear its value.
-  */
 }
 
 function reverse(event) {
@@ -111,23 +85,7 @@ function reverse(event) {
   }
   printValue(reverse);
 
-  /*
-    TODO: Print out the string, but in reverse. Do _not_ print out each character from the string individually; this would be pretty weird behavior when someone wants to see the reversed string of what they typed in!
-    
-    Use the pre-defined `printValue` function below to print out the result,
-    giving it the value you want to print.
-
-    Guidelines: 
-    * You will find solutions on the internet that involve using `split` to make the string into an array. This is _not_ the correct solution for this exercise! Besides being incredibly inefficient (although this is a matter of principle more than app speed), this solution would teach you nothing about how to iterate over strings--and probably nothing about iterating over arrays either, since we don't have the foundational knowledge of arrays yet.
-    * To get a complete string, we'll have to build a new string entirely.
-    * It would probably _not_ make sense to go through the user input string in regular, 0 to sring.length order.
-      
-  */
-
-  /*
-    Stretch goal TODO:
-    Using the variable we saved above for the input box, clear its value.
-  */
+  userInput.value = "";
 }
 
 function luckify(event) {
@@ -142,18 +100,7 @@ function luckify(event) {
     printValue(Math.floor(Math.random() * inputNum));
   }
 
-  /*
-    Stretch Goal TODOS:
-
-    * Make sure that you don't give them the same lucky number more than once. There are a few possible solutions to this, but don't use arrays! We'll get there soon. NOTE: the luckify stretch goals are particularly hard ones, feel free to come back after doing other stretch goals first.
-    * If you're preventing them getting the same number, but they type in, say, a 3, your browser will enter an infinite loop, as you can't get 5 numbers from 1-3 without repeating a number. But you _could_ have it simply exit the loop earlier if the user entered a lower number than 5.
-    * If you get a lucky number of 15, _some_ solutions to the above will prevent a 1 from coming afterwards, as it will consider the 1 digit in 15 as an instance of 1 having already occurred. (Feel free to test this with 19 as an input, and see if a number with a 1 digit is ever followed by a 1.) One solution to this involves the string method `padStart`... but feel free to find a different way!
-  */
-
-  /*
-    Stretch goal TODO:
-    Using the variable we saved above for the input box, clear its value.
-  */
+  userInput.value = "";
 }
 
 function titleify(event) {
@@ -164,37 +111,22 @@ function titleify(event) {
   let title = "";
 
   for (let i = 0; i < inStr.length; i++) {
-    if (i === 0) {
-      title += inStr[i].toUpperCase();
-    }
-    if (inStr[i] === " ") {
+    if(i===0){
       title += inStr[i].toUpperCase();
       continue;
-    } else {
-      title += inStr[i];
     }
+    if (inStr[i-1] === " ") {
+      title += inStr[i].toUpperCase();
+    }else{
+      title += inStr[i];
+
+    }
+    
   }
 
   printValue(title);
 
-  // TODO: Use the variable you saved in the above step to dive deeper into the
-  // object and find the value the user has added there. Save it to a variable.
-
-  /*
-    TODO: Print out the title case version of the string the user inputted.
-
-    Use the pre-defined `printValue` function below to print out the result,
-    giving it the value you want to print.
-
-    What's title case? It's the case used for the title of a book or movie. If it's the first letter of a word, you use a capital letter. Otherwise, use lower case.
-
-    True title case keeps lower case for any word that's an article or preposition, but we're _definitely_ not asking that of you!
-  */
-
-  /*
-    Stretch goal TODO:
-    Using the variable we saved above for the input box, clear its value.
-  */
+  userInput.value = "";
 }
 
 // Prints the value given to the DOM.
