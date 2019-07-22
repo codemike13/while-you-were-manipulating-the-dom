@@ -56,9 +56,12 @@ function crazify(event) {
 
   const userInput = document.querySelector("#user-input");
   const inStr = userInput.value;
+  const crazyLength = inStr.length -1;
   let crazy = "";
-  for (i = 0; i < inStr.length; i++) {
-    if (i % 2 === 0) {
+  
+  for (i = 0; i < crazyLength; i++) {
+   
+    if (i!==0 && i % 2 !== 0) {
       crazy += inStr[i].toUpperCase();
     } else if (inStr[i] === inStr[i].toUpperCase()) {
       crazy += inStr[i].toLowerCase();
