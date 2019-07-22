@@ -141,7 +141,6 @@ function luckify(event) {
   for (let i = 0; i < 5; i++) {
     printValue(Math.floor(Math.random() * inputNum));
   }
-  
 
   /*
     Stretch Goal TODOS:
@@ -158,14 +157,25 @@ function luckify(event) {
 }
 
 function titleify(event) {
-  // Make sure the page isn't reloaded when the user submits the form.
   event.preventDefault();
 
-  /*
-  TODO: Call the function `clearList`, which we have defined for you.
-*/
+  const userInput = document.querySelector("#user-input");
+  const inStr = userInput.value;
+  let title = "";
 
-  // TODO: Find the input box the user is typing in and put the DOM node in a variable.
+  for (let i = 0; i < inStr.length; i++) {
+    if (i === 0) {
+      title += inStr[i].toUpperCase();
+    }
+    if (inStr[i] === " ") {
+      title += inStr[i].toUpperCase();
+      continue;
+    } else {
+      title += inStr[i];
+    }
+  }
+
+  printValue(title);
 
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Save it to a variable.
