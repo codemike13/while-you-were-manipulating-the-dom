@@ -77,11 +77,13 @@ function crazify(event) {
   const inStr = userInput.value;
   let crazy = "";
   for(i=0;i<inStr.length;i++){
-    if(inStr[i]%2===0){
-      crazy+=isStr[i].toUpperCase()
+    if(i%2===0){
+      crazy+=inStr[i].toUpperCase()
+    }else{
+      crazy += inStr[i];
     }
   }
-
+printValue(crazy);
   /*
     Stretch goal TODOS:
     * If you haven't already, make sure capitalized user inputs get crazified too. "BANANA" crazified should be "bAnAnA", not "BANANA"!
