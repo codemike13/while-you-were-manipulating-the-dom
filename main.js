@@ -76,14 +76,14 @@ function crazify(event) {
   const userInput = document.querySelector("#user-input");
   const inStr = userInput.value;
   let crazy = "";
-  for(i=0;i<inStr.length;i++){
-    if(i%2===0){
-      crazy+=inStr[i].toUpperCase()
-    }else{
+  for (i = 0; i < inStr.length; i++) {
+    if (i % 2 === 0) {
+      crazy += inStr[i].toUpperCase();
+    } else {
       crazy += inStr[i];
     }
   }
-printValue(crazy);
+  printValue(crazy);
   /*
     Stretch goal TODOS:
     * If you haven't already, make sure capitalized user inputs get crazified too. "BANANA" crazified should be "bAnAnA", not "BANANA"!
@@ -98,17 +98,18 @@ printValue(crazy);
 }
 
 function reverse(event) {
-  // Make sure the page isn't reloaded when the user submits the form.
   event.preventDefault();
 
-  /*
-    TODO: Call the function `clearList`, which we have defined for you.
-  */
+  clearList();
 
-  // TODO: Find the input box the user is typing in and put the DOM node in a variable.
+  const userInput = document.querySelector("#user-input");
+  const inStr = userInput.value;
+  let reverse = "";
 
-  // TODO: Use the variable you saved in the above step to dive deeper into the
-  // object and find the value the user has added there. Save it to a variable.
+  for (let i = inStr.length - 1; i >= 0; i--) {
+    reverse += inStr[i];
+  }
+  printValue(reverse);
 
   /*
     TODO: Print out the string, but in reverse. Do _not_ print out each character from the string individually; this would be pretty weird behavior when someone wants to see the reversed string of what they typed in!
@@ -130,25 +131,17 @@ function reverse(event) {
 }
 
 function luckify(event) {
-  // Make sure the page isn't reloaded when the user submits the form.
   event.preventDefault();
 
-  /*
-  TODO: Call the function `clearList`, which we have defined for you.
-*/
+  clearList();
 
-  // TODO: Find the input box the user is typing in and put the DOM node in a variable.
+  const userInput = document.querySelector("#user-input");
+  const inputNum = parseInt(userInput.value);
 
-  // TODO: Use the variable you saved in the above step to dive deeper into the
-  // object and find the value the user has added there. Make sure it's a
-  // number, not a string. Save it to a variable.
-
-  /*
-    TODO: Print out 5 "lucky numbers" (random integers) from 1 to the number they typed in.
-
-    Use the pre-defined `printValue` function below to print out each line,
-    giving it the value you want to print.
-  */
+  for (let i = 0; i < 5; i++) {
+    printValue(Math.floor(Math.random() * inputNum));
+  }
+  
 
   /*
     Stretch Goal TODOS:
