@@ -1,51 +1,34 @@
 // TODO: Find the biggify numbers button on our page.
-const biggifyNumbersButton = document.querySelector('');
+const biggifyNumbersButton = document.querySelector(".big");
+console.log(biggifyNumbersButton);
 //When it's clicked, launch `biggify`.
 biggifyNumbersButton.onclick = biggify;
 
 // TODO: Find the biggify numbers button on our page.
-const nasafyButton = document.querySelector('');
-//When it's clicked, launch `biggify`.
+const nasafyButton = document.querySelector(".blastoff");
 nasafyButton.onclick = nasafy;
 
 // TODO: Find the crazify string button on our page.
-const crazifyStringButton = document.querySelector('');
-//When it's clicked, launch `stringify`.
+const crazifyStringButton = document.querySelector(".crazy");
 crazifyStringButton.onclick = crazify;
 
 // TODO: Find the reverse string button on our page.
-const reverseStringButton = document.querySelector('');
-//When it's clicked, launch `reverse`.
+const reverseStringButton = document.querySelector(".reverse");
 reverseStringButton.onclick = reverse;
 
 // TODO: Find the lucky numbers button on our page.
-const luckyNumbersButton = document.querySelector('');
-//When it's clicked, launch `luckify`.
+const luckyNumbersButton = document.querySelector(".lucky");
 luckyNumbersButton.onclick = luckify;
 
 // TODO: Find the lucky numbers button on our page.
-const titleCaseButton = document.querySelector('');
-//When it's clicked, launch `titleify`.
+const titleCaseButton = document.querySelector(".titlec");
 titleCaseButton.onclick = titleify;
 
-
 function biggify(event) {
-  // Make sure the page isn't reloaded when the user submits the form.
   event.preventDefault();
-
-  /*
-  TODO: Call the function `clearList`, which we have defined for you. You
-  don't need to put anything in the parentheses to tell it what to clear, just
-  call it--it knows what to do!
-  */
-  
-  // TODO: Find the input box the user is typing in and put the DOM node in a variable.
-  // Make sure you're using the right selector!
-  
-  // TODO: Use the variable you saved in the above step to dive deeper into the
-  // object and find the value the user has added there. Save it to a variable.
-  
-  
+  clearList();
+  const userInput = document.querySelector("#user-input");
+  const inputNum = parseInt(userInput.value)+9000;
   /*
   TODO: Add 9000 to the user's number.
   
@@ -57,10 +40,7 @@ function biggify(event) {
   Essentially, you can use `printValue` the same way you would `console.log`,
   only it will write to the DOM instead of to the console.
   */
-
-
-
-  
+  printValue(inputNum);
   /*
   Stretch goal TODO:
     Using the variable we saved above for the input box, clear its value.
@@ -69,7 +49,6 @@ function biggify(event) {
     experience to ask them to delete anything they've inputted previously before
     inputting something else.
   */
-  
 }
 
 function nasafy(event) {
@@ -79,11 +58,10 @@ function nasafy(event) {
   /*
     TODO: Call the function `clearList`, which we have defined for you.
   */
+  clearList();
 
-  
   // TODO: Find the input box the user is typing in and put the DOM node in a variable.
 
-  
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Save it to a variable.
 
@@ -94,30 +72,25 @@ function nasafy(event) {
     giving it the value you want to print.
   */
 
-
-
   /*
     Stretch goal TODO:
     Using the variable we saved above for the input box, clear its value.
   */
-  
 }
 
 function crazify(event) {
   // Make sure the page isn't reloaded when the user submits the form.
   event.preventDefault();
-  
+
   /*
   TODO: Call the function `clearList`, which we have defined for you.
   */
+  clearList();
 
-  
- // TODO: Find the input box the user is typing in and put the DOM node in a variable.
+  // TODO: Find the input box the user is typing in and put the DOM node in a variable.
 
-  
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Save it to a variable.
-  
 
   /*
     TODO: Loop through and capitalize every even-numbered character. That is, if the user's string is 7 characters long, the 2nd, 4th, and 6th characters should all be capitalized.
@@ -127,7 +100,6 @@ function crazify(event) {
     Use the pre-defined `printValue` function below to print out result,
     giving it the value you want to print.
   */
-  
 
   /*
     Stretch goal TODOS:
@@ -136,25 +108,21 @@ function crazify(event) {
     * Only count the characters that are in the alphabet when you're considering what to capitalize. Without this adjustment, "hey you" comes out as "hEy yOu", with the space "capitalized" (whatever that means!). Make it result in "hEy YoU" instead!
   */
 
-
-
   /*
   Stretch goal TODO:
   Using the variable we saved above for the input box, clear its value.
   */
-  
 }
-  
+
 function reverse(event) {
   // Make sure the page isn't reloaded when the user submits the form.
   event.preventDefault();
-  
+
   /*
     TODO: Call the function `clearList`, which we have defined for you.
   */
-  
-  // TODO: Find the input box the user is typing in and put the DOM node in a variable.
 
+  // TODO: Find the input box the user is typing in and put the DOM node in a variable.
 
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Save it to a variable.
@@ -172,32 +140,25 @@ function reverse(event) {
       
   */
 
-
-
   /*
     Stretch goal TODO:
     Using the variable we saved above for the input box, clear its value.
   */
-
 }
 
 function luckify(event) {
   // Make sure the page isn't reloaded when the user submits the form.
   event.preventDefault();
 
-/*
+  /*
   TODO: Call the function `clearList`, which we have defined for you.
 */
 
-  
   // TODO: Find the input box the user is typing in and put the DOM node in a variable.
-  
 
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Make sure it's a
   // number, not a string. Save it to a variable.
-
-
 
   /*
     TODO: Print out 5 "lucky numbers" (random integers) from 1 to the number they typed in.
@@ -205,7 +166,6 @@ function luckify(event) {
     Use the pre-defined `printValue` function below to print out each line,
     giving it the value you want to print.
   */
-
 
   /*
     Stretch Goal TODOS:
@@ -215,31 +175,24 @@ function luckify(event) {
     * If you get a lucky number of 15, _some_ solutions to the above will prevent a 1 from coming afterwards, as it will consider the 1 digit in 15 as an instance of 1 having already occurred. (Feel free to test this with 19 as an input, and see if a number with a 1 digit is ever followed by a 1.) One solution to this involves the string method `padStart`... but feel free to find a different way!
   */
 
-
-
   /*
     Stretch goal TODO:
     Using the variable we saved above for the input box, clear its value.
   */
-
 }
 
 function titleify(event) {
   // Make sure the page isn't reloaded when the user submits the form.
   event.preventDefault();
 
-/*
+  /*
   TODO: Call the function `clearList`, which we have defined for you.
 */
 
-  
   // TODO: Find the input box the user is typing in and put the DOM node in a variable.
-  
-  
+
   // TODO: Use the variable you saved in the above step to dive deeper into the
   // object and find the value the user has added there. Save it to a variable.
-
-
 
   /*
     TODO: Print out the title case version of the string the user inputted.
@@ -252,37 +205,32 @@ function titleify(event) {
     True title case keeps lower case for any word that's an article or preposition, but we're _definitely_ not asking that of you!
   */
 
-
-
   /*
     Stretch goal TODO:
     Using the variable we saved above for the input box, clear its value.
   */
-
 }
-
 
 // Prints the value given to the DOM.
 // NO NEED TO TOUCH THIS SECTION!
 function printValue(value) {
   // Create a list item.
-  const listItem = document.createElement('li');
+  const listItem = document.createElement("li");
   // Put its value as its contents.
   listItem.innerText = value;
-  
+
   // Find the unordered list we've made into a results console.
-  const list = document.querySelector('.list')
+  const list = document.querySelector(".list");
   // Append our list item to it.
   list.appendChild(listItem);
 }
 
-
 // Clears the list from the DOM.
 // NO NEED TO TOUCH THIS SECTION!
 function clearList() {
-  let current = document.querySelector('.list > li');
-  while(current !== null) {
+  let current = document.querySelector(".list > li");
+  while (current !== null) {
     current.remove();
-    current = document.querySelector('.list > li');
+    current = document.querySelector(".list > li");
   }
 }
