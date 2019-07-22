@@ -28,7 +28,9 @@ function biggify(event) {
   event.preventDefault();
   clearList();
   const userInput = document.querySelector("#user-input");
-  const inputNum = parseInt(userInput.value)+9000;
+  const inputNum = parseInt(userInput.value) + 9000;
+  userInput.value = "";
+
   /*
   TODO: Add 9000 to the user's number.
   
@@ -52,54 +54,33 @@ function biggify(event) {
 }
 
 function nasafy(event) {
-  // Make sure the page isn't reloaded when the user submits the form.
   event.preventDefault();
 
-  /*
-    TODO: Call the function `clearList`, which we have defined for you.
-  */
   clearList();
 
-  // TODO: Find the input box the user is typing in and put the DOM node in a variable.
+  const userInput = document.querySelector("#user-input");
+  const inputNum = parseInt(userInput.value);
 
-  // TODO: Use the variable you saved in the above step to dive deeper into the
-  // object and find the value the user has added there. Save it to a variable.
-
-  /*
-    TODO: Print every value from the user's number down to (and including) the number 1. Then print "Blastoff!".
-    
-    Use the pre-defined `printValue` function below to print out each line,
-    giving it the value you want to print.
-  */
-
-  /*
-    Stretch goal TODO:
-    Using the variable we saved above for the input box, clear its value.
-  */
+  for (i = inputNum; i >= 0; i--) {
+    printValue(i);
+  }
+  printValue("blast OFFFFFFFFF!!!!");
+  userInput.value = "";
 }
 
 function crazify(event) {
-  // Make sure the page isn't reloaded when the user submits the form.
   event.preventDefault();
 
-  /*
-  TODO: Call the function `clearList`, which we have defined for you.
-  */
   clearList();
 
-  // TODO: Find the input box the user is typing in and put the DOM node in a variable.
-
-  // TODO: Use the variable you saved in the above step to dive deeper into the
-  // object and find the value the user has added there. Save it to a variable.
-
-  /*
-    TODO: Loop through and capitalize every even-numbered character. That is, if the user's string is 7 characters long, the 2nd, 4th, and 6th characters should all be capitalized.
-    
-    Hint: you'll probably have to "build" a new string as you loop.
-    
-    Use the pre-defined `printValue` function below to print out result,
-    giving it the value you want to print.
-  */
+  const userInput = document.querySelector("#user-input");
+  const inStr = userInput.value;
+  let crazy = "";
+  for(i=0;i<inStr.length;i++){
+    if(inStr[i]%2===0){
+      crazy+=isStr[i].toUpperCase()
+    }
+  }
 
   /*
     Stretch goal TODOS:
